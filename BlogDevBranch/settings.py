@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # myAPP
+    # only one for now or maybe forever
     'blogDevBranchAPP',
+    
 ]
 
 MIDDLEWARE = [
