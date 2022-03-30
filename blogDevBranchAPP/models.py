@@ -6,8 +6,11 @@ from tabnanny import verbose
 from django.db import models
 
 # Create your models here.
+
+
 class NormalArticleTopic(models.Model):
     # 普通文章类
+    # TODO: BUG topicsEntry = models.ForeignKey(NormalArticleTopicEntry, on_delete=models.SET("DELETED")) 
     title = models.CharField(max_length=256)
     date_var = models.DateTimeField(auto_now_add=True)
 
@@ -20,6 +23,7 @@ class NormalArticleTopic(models.Model):
 class NormalArticleTopicEntry(models.Model):
     # TODO:maybe change on_delete ; -1 means "was there but deleted"
     # TODO:https://stackoverflow.com/questions/38388423/what-does-on-delete-do-on-django-models
+    
     topics = models.ForeignKey(NormalArticleTopic, on_delete=models.SET("DELETED")) 
  
     # TODO:markdown text
